@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Narcissistic Number</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h3>A Narcissistic Number is a Number which is the sum of it's own, each raised to the power of the number of digits in a given base</h3>
+            <br>
+            <button type="submit">Examples</button>
+            <button type="button" id="start">Start Game</button>
+        </div>
+
+        <div class="popup" id="myForm">
+            <form class="form-container" action="#">
+                <h1>Narcissistic Detector</h1>
+
+                <label for="input"><b>Enter a number</b></label>
+                <input type="number" placeholder="Number Only" id="input" required></textarea>
+                <div id="msg"></div>
+                <!-- <div id="computer" class="computer"></div>
+                <div id="comerror" class="comerror"></div> -->
+                <button type="submit" id="detect">Detect Narcissistic</button>
+                <button type="button" id="cancel" class="cancel">Close</button>
+            </form>
+        </div>
+    </body>
+</html>

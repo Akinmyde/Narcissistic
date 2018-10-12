@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("back.png");
+}
+
+.container {
+    margin: 5% 30%;
+    width: 40%;
+    padding: 20px 10px;
+    background-color: white;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+
+h3,label {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 80%;
+    text-decoration: antiquewhite;
+    text-align: center;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
+    text-decoration: antiquewhite;
+    text-align: center;
+}
+
+button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 0px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    border: 3px solid #f1f1f1;
+    /* z-index: 9; */
+}
+
+  
+  /* Add a red background color to the cancel button */
+.cancel {
+    background-color: red;
+  }
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+.form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+  }
+  
+.computer {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 2px solid #dedede;
+    background-color:white;
+    color: #4caf50;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.computererror {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 2px solid #dedede;
+    background-color:white;
+    color: red;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
