@@ -46,11 +46,11 @@ button {
     bottom: 0;
     right: 10px;
     border: 3px solid #f1f1f1;
+    overflow-x: auto;
+    overflow-y: auto;
     /* z-index: 9; */
 }
 
-  
-  /* Add a red background color to the cancel button */
 .cancel {
     background-color: red;
   }
