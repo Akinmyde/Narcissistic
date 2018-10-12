@@ -40,6 +40,10 @@ button {
     display: inline-block;
 }
 
+.example {
+    background-color: #5050F0;
+}
+
 .popup {
     display: none;
     position: fixed;
