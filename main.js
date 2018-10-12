@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let detectNarcissistic = () => {
         let input = document.getElementById('input').value;
         console.log(input);
-        if (input !== "") {
+        if (input !== "" && !(input < 0) ) {
             input = parseInt(input);
             let result = narcissistic(input);
             let msg;
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else {
             playAgain();
-            msg = "you need to enter a number, it looks like we are having an empty value";
+            msg = "you need to enter a number, it looks like we are having an empty value or a negative number";
             return computerInputDisplay(msg,1000,"computererror");
         }
     }
@@ -91,11 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let input = document.getElementById('input');
 
     let isNum = () => {
-        // let iKeyCode = (input.which) ? input.which : input.keyCode; 
-        // if(iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57)) {
-        //     return false;
-        // }
-        // return true;
         if (isNaN(input)) {
             return false;
         }
