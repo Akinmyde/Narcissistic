@@ -17,20 +17,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     let detectNarcissistic = () => {
         let input = document.getElementById('input').value;
-        input = parseInt(input);
-        let result = narcissistic(input);
-        let msg;
-        if (input === result) {
-            msg = "You should be proud of yourself, you can call yourself ACE... your input is " + input + " and your result is " + result + " NARCISSISTIC EXPERT"; 
-            return computerInputDisplay(msg,1000,"computer");
-        } else {
-            msg = "lol, you can't even guess a Narcissistic Number...your input is " + input + " and your result is " + result;
-            return computerInputDisplay(msg,1000,"computererror");
+        if (input !== null || input !== "") {
+            input = parseInt(input);
+            let result = narcissistic(input);
+            let msg;
+            if (input === result) {
+                playAgain();
+                msg = "You should be proud of yourself, you can call yourself an ACE... your input is " + input + " and your result is " + result + " NARCISSISTIC EXPERT!!!"; 
+                return computerInputDisplay(msg,1000,"computer");
+            } else {
+                playAgain();
+                msg = "lol, you can't even guess a Narcissistic Number...your input is " + input + " and your result is " + result;
+                return computerInputDisplay(msg,1000,"computererror");;
+            }
         }
     }
 
-    let stopGame = () => {
-        document.getElementById('input');
+    let playAgain = () => {
+        let play = document.getElementById('detect').innerHTML = "Play Again";
+        if(play == "Play Again") {
+            clearNode();
+        }
     }
 
     let computerInputDisplay = (input,delay,idclass) => {
@@ -38,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         computerMsg.textContent = input;
         computerMsg.setAttribute('id',idclass);
         computerMsg.setAttribute('class',idclass);
+
         setTimeout(() => {
             document.getElementById("msg").appendChild(computerMsg);
         },delay);
