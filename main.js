@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     let detectNarcissistic = () => {
         let input = document.getElementById('input').value;
-        if (input !== null || input !== "") {
+        console.log(input);
+        if (input !== "") {
             input = parseInt(input);
             let result = narcissistic(input);
             let msg;
@@ -28,16 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 playAgain();
                 msg = "lol, you can't even guess a Narcissistic Number...your input is " + input + " and your result is " + result;
-                return computerInputDisplay(msg,1000,"computererror");;
+                return computerInputDisplay(msg,1000,"computererror");
             }
+        } else {
+            playAgain();
+            msg = "you need to enter a number, it looks like we are having an empty value";
+            return computerInputDisplay(msg,1000,"computererror");
         }
     }
 
     let playAgain = () => {
         let play = document.getElementById('detect').innerHTML = "Play Again";
-        if(play == "Play Again") {
-            clearNode();
-        }
+        clearNode();
     }
 
     let computerInputDisplay = (input,delay,idclass) => {
