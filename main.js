@@ -1,5 +1,7 @@
+// use javascript only when the DOM element has completely loaded
 document.addEventListener("DOMContentLoaded", () => {
     
+    // calculate any user input using the narcissistic formular
     let narcissistic = (value) => {
         let digits = value.toString();
         let power = digits.length;
@@ -15,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return sum;
     }
+
+    // detect if the input is a narcissistic number or not
     let detectNarcissistic = () => {
         let input = document.getElementById('input').value;
         console.log(input);
@@ -38,11 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    //repeat the game after each result
     let playAgain = () => {
         let play = document.getElementById('detect').innerHTML = "Play Again";
         clearNode();
     }
 
+    // create a automated message by the computer
     let computerInputDisplay = (input,delay,idclass) => {
         computerMsg = document.createElement('div');
         computerMsg.textContent = input;
@@ -59,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         computerInputDisplay("Welcome! enter a number to play",1000,"computer");
     };
     
+    //open the narsissitic detector form
     let closeForm = () => {
         let computerMsg = document.createElement('div');
         computerMsg.textContent = "Thanks for using the App!!!";
@@ -72,10 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },2000)
         }
 
+    //clear user input box
     let clearText = () => {
         document.getElementById('input').value = '';
     }
 
+    //remove all message my the computer
     let clearNode = () => {
         let msg = document.getElementById("msg");
         while(msg.firstChild) {
@@ -83,25 +92,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    //shoews the user an example before playing the game
+    let examples = () => document.getElementById('alert').style.display = "block";
 
-    
+    // close the example displayed
+    let closeExample = () => setTimeout(() => { document.getElementById('alert').style.display = "none"; }, 600);
+
+
     let start = document.getElementById('start');
     let cancel = document.getElementById('cancel');
     let detect = document.getElementById('detect');
     let input = document.getElementById('input');
+    let example = document.getElementById('example');
+    let close = document.getElementById("closebtn");
 
-    let isNum = () => {
-        if (isNaN(input)) {
-            return false;
-        }
-        return true;
-    }
     
+    // eventListners
     start.addEventListener('click', openForm);
     cancel.addEventListener('click', closeForm);
     detect.addEventListener('click', detectNarcissistic);
     input.addEventListener('focus',clearText);
-    input.addEventListener('keypress', isNum);
+    example.addEventListener('click', examples);
+    close.addEventListener('click', closeExample);
 
 }) 
 

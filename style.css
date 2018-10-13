@@ -61,7 +61,7 @@ input[type="number"] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
+    /* display: inline-block; */
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
@@ -90,6 +90,28 @@ input[type="number"] {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+}
+
+.alert {
+    padding: 5px;
+    align-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #5050F0;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: red;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 
