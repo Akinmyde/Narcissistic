@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // calculate any user input using the narcissistic formular
-    let narcissistic = (value) => {
+    const narcissistic = (value) => {
         let digits = value.toString();
         let power = digits.length;
         let sum = 0;
@@ -19,9 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // detect if the input is a narcissistic number or not
-    let detectNarcissistic = () => {
+    const detectNarcissistic = () => {
         let input = document.getElementById('input').value;
-        console.log(input);
         if (input !== "" && !(input < 0) ) {
             input = parseInt(input);
             let result = narcissistic(input);
@@ -43,13 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //repeat the game after each result
-    let playAgain = () => {
+    const playAgain = () => {
         let play = document.getElementById('detect').innerHTML = "Play Again";
         clearNode();
     }
 
     // create a automated message by the computer
-    let computerInputDisplay = (input,delay,idclass) => {
+    const computerInputDisplay = (input,delay,idclass) => {
         computerMsg = document.createElement('div');
         computerMsg.textContent = input;
         computerMsg.setAttribute('id',idclass);
@@ -60,16 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
         },delay);
     }
 
-    let openForm = () => {
+    const openForm = () => {
         document.getElementById('myForm').style.display = "block";
         computerInputDisplay("Welcome! enter a number to play",1000,"computer");
         disableEnableButton('example');
         disableEnableButton('start');
     };
 
-    let disableEnableButton = (id) => {
+    const disableEnableButton = (id) => {
         let button = document.getElementById(id);
-        if(button.disabled) {
+        if (button.disabled) {
             return button.disabled = false;
         } else {
             return button.disabled = true;
@@ -77,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     //open the narsissitic detector form
-    let closeForm = () => {
+    const closeForm = () => {
         let computerMsg = document.createElement('div');
         computerMsg.textContent = "Thanks for using the App!!!";
         computerMsg.setAttribute('id',"computer");
@@ -94,12 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     //clear user input box
-    let clearText = () => {
+    const clearText = () => {
         document.getElementById('input').value = '';
     }
 
     //remove all message my the computer
-    let clearNode = () => {
+    const clearNode = () => {
         let msg = document.getElementById("msg");
         while(msg.firstChild) {
             msg.removeChild(msg.firstChild);
@@ -107,10 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //shoews the user an example before playing the game
-    let examples = () => document.getElementById('alert').style.display = "block";
+    const examples = () => document.getElementById('alert').style.display = "block";
 
     // close the example displayed
-    let closeExample = () => setTimeout(() => { document.getElementById('alert').style.display = "none"; }, 600);
+    const closeExample = () => setTimeout(() => { document.getElementById('alert').style.display = "none"; }, 600);
 
 
     let start = document.getElementById('start');
