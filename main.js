@@ -63,7 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
     let openForm = () => {
         document.getElementById('myForm').style.display = "block";
         computerInputDisplay("Welcome! enter a number to play",1000,"computer");
+        disableEnableButton('example');
+        disableEnableButton('start');
     };
+
+    let disableEnableButton = (id) => {
+        let button = document.getElementById(id);
+        if(button.disabled) {
+            return button.disabled = false;
+        } else {
+            return button.disabled = true;
+        }
+    }
     
     //open the narsissitic detector form
     let closeForm = () => {
@@ -77,6 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('myForm').style.display = "none";
             clearNode();
         },2000)
+
+        disableEnableButton('start');
+        disableEnableButton('example');
         }
 
     //clear user input box
